@@ -11,12 +11,16 @@ $(document).ready(function () {
                 type:'post',
                 url: './ajax/add_user.php',
                 data: {f: $fname, e: $email, p:$pass},
-                // dataType: 'json',
+                dataType: 'json',
                 beforeSend: function () {
                     
                 },
                 success: function (response) {
-                    console.log(response);
+                    if(response.status == 'success'){
+                        console.log(response.msg);
+                    }else{
+                        alert(response.msg)
+                    }
                 },
                 error: function (xhr, status, msg) {
                     console.error(msg);
