@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(247, 244, 247);
+}
+nav.navbar a{
+    color:white;
+}
+nav.navbar a:hover{
+    color:#0080C0;
+}
+
+.form_container{
+    max-width: 350px;
+    margin:8vh auto;
+
+}
