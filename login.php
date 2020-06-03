@@ -23,18 +23,12 @@
     <div class="form_container card">
         <div class="card-header">
             <strong>
-                <i class="fa fa-user-plus"></i> Register New User
+                <i class="fa fa-sign-in-alt"></i> Login Here
             </strong>
         </div>
 
         <div class="card-body">
-            <form method="post" name="frm_register">
-                <div class="form-group">
-                    <label for="fname">
-                        <i class="fa fa-user"></i> Firstname
-                    </label>
-                    <input type="text" name="fname" id="fname" required class="form-control">
-                </div>
+            <form method="post" name="form_login">
                 <div class="form-group">
                     <label for="email">
                         <i class="fa fa-envelope"></i> Email Address
@@ -48,14 +42,25 @@
                     <input type="password" name="pass" id="pass" required class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="cpass">
-                        <i class="fa fa-key"></i> Confirm Password
-                    </label>
-                    <input type="password" name="cpass" id="cpass" required class="form-control">
+                    <label for="pass">
+                        <fieldset>
+                            <h6> <i class="fa fa-user"></i> User Type</h6>
+                            <p>
+                                <label>Select User</label>
+                                <select id="myList">
+                                    <option value="1">Select User</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </p>
+                        </fieldset>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success btn-sm">
-                        <i class="fa fa-user-plus"></i> Add User
+                    <button type="reset" class="btn btn-danger btn-sm" style="box-shadow: none;">
+                        <i class="fas fa-window-close"></i> Cancel
+                    </button>
+                    <button type="submit" class="btn btn-success btn-sm" style="box-shadow: none;">
+                        <i class="fa fa-sign-in-alt"></i> Login
                     </button>
                 </div>
             </form>
