@@ -17,9 +17,12 @@ $(document).ready(function () {
                 },
                 success: function (response) {
                     if(response.status == 'success'){
-                        console.log(response.msg);
+                        proAlertInfo('myAlert', response.msg);
+                        setTimeout(() => {
+                            window.location.href = 'login.php';
+                        }, 3000);
                     }else{
-                        alert(response.msg)
+                        proAlertError('myAlert', response.msg);
                     }
                 },
                 error: function (xhr, status, msg) {
@@ -32,5 +35,12 @@ $(document).ready(function () {
         }else{
             alert('Password Mismatched!');
         }
-    })
-})
+    });
+
+    $('form[name=form_login]').on('submit', function (ev) {
+        $form = $(this);
+        ev.preventDefault();
+        proAlertError('myAlert', 'Hello to everyone here! How are you doing?');
+        $form.trigger('reset');
+    });
+});

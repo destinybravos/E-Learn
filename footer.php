@@ -39,3 +39,5 @@
             <p class="copyright">Footer made with <i class="fa fa-heart"></i> by DemzyOfficial </p>
         </div>
     </section>
+
+    <script src="js/script.js"></script>
