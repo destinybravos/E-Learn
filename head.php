@@ -1,3 +1,7 @@
+<script src="js/jquery.js"></script>
+<?php include_once "proAlert.php"; ?>
+
+
 <header class="container-fluid bg-dark text-light sticky-top">
     <div class="container">
         <div class="row">

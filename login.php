@@ -42,32 +42,29 @@
                     <input type="password" name="pass" id="pass" required class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="pass">
-                        <fieldset>
-                            <h6> <i class="fa fa-user"></i> User Type</h6>
-                            <p>
-                                <label>Select User</label>
-                                <select id="myList">
-                                    <option value="1">Select User</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                </select>
-                            </p>
-                        </fieldset>
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember"> Remember Me</label>
                 </div>
+
                 <div class="form-group">
-                    <button type="reset" class="btn btn-danger btn-sm" style="box-shadow: none;">
-                        <i class="fas fa-window-close"></i> Cancel
-                    </button>
                     <button type="submit" class="btn btn-success btn-sm" style="box-shadow: none;">
                         <i class="fa fa-sign-in-alt"></i> Login
                     </button>
                 </div>
+
+                <div class="form-group">
+                    <a href="register.php">Create an account.</a>
+                </div>
+
             </form>
         </div>
     </div>
 
-    <?php include_once 'footer.php'; ?>
+    <?php 
+    include_once 'footer.php'; 
+    ?>
+
+
 
 </body>
 

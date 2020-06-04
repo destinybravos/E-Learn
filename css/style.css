@@ -13,3 +13,82 @@ nav.navbar a:hover{
     margin:8vh auto;
 
 }
+
+/* FooterStyle */
+.footer {
+    margin-top: 1px;
+    /* margin-bottom: 50px; */
+    /* padding: 70px 20px 15px; */
+    padding: 0px 20px 15px;
+    background-color: #1a1a1a;
+    /* background-image: linear-gradient(#00331a, #003333); */
+    /* background-image: linear-gradient(#00001a, #003333); */
+    color: #fff;
+}
+
+.footer-logo {
+    width: 100px;
+    margin-top: 53px;
+    margin-bottom: 0px;
+
+}
+
+.footer h4 {
+    text-align: left;
+    margin-top: 65px;
+    margin-bottom: 25px;
+}
+
+.footer p {
+    font-size: 12px;
+    text-align: justify;
+    padding-right: 35px;
+
+}
+
+.footer .row .fab {
+    padding-right: 20px;
+    font-size: 15px;
+}
+
+.footer .row .fa {
+    padding-right: 20px;
+    font-size: 15px;
+
+}
+
+.footer hr {
+    margin-top: 10px;
+    background: #efefef;
+}
+
+.fa-heart {
+    margin: 0.5px;
+    color: #f44336;
+}
+
+.footer .copyright {
+    text-align: center;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+@media(max-width:767px) {
+    .footer p {
+        text-align: center;
+    }
+
+    .footer h4 {
+        text-align: center;
+    }
+
+    /* .footer-logo {} */
+}
