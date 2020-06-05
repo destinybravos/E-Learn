@@ -1,3 +1,6 @@
+
+<p align="center"><img src="https://github.com/destinybravos/E-Learn/blob/master/img/elearning.png" width="400"></p>
+
 ## About E-Learn
 E-Learn is a simple E-Learning application that is developed by a group of students learning website developement 
 at Programmers City. It is their first project on GitHub which was used by them to test the strenght 
