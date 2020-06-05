@@ -40,7 +40,8 @@ $(document).ready(function () {
     $('form[name=form_login]').on('submit', function (ev) {
         $form = $(this);
         ev.preventDefault();
-        proAlertError('myAlert', 'Hello to everyone here! How are you doing?');
-        $form.trigger('reset');
+        // proAlertError('myAlert', 'Hello to everyone here! How are you doing?');
+        // $form.trigger('reset');
+        proAlertError_br('Hello to you!');
     });
 });

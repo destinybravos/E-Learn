@@ -39,5 +39,6 @@
             <p class="copyright">Footer made with <i class="fa fa-heart"></i> by DemzyOfficial </p>
         </div>
     </section>
-
+    <!-- Dynamic Alert Notification Container -->
+    <span id="alert-container" style="background-color:red;"></span>
     <script src="js/script.js"></script>
