@@ -17,7 +17,8 @@ $(document).ready(function () {
                 },
                 success: function (response) {
                     if(response.status == 'success'){
-                        proAlertInfo('myAlert', response.msg);
+                        // proAlertInfo('myAlert', response.msg);
+                        proAlertInfo_tr(response.msg);
                         setTimeout(() => {
                             window.location.href = 'login.php';
                         }, 3000);
@@ -33,7 +34,8 @@ $(document).ready(function () {
                 }
             })
         }else{
-            proAlertError('myAlert','Password Mismatched!');
+            // proAlertError('myAlert','Password Mismatched!');
+            proAlertError_tr('Password Mismatched');
         }
     });
 
@@ -42,6 +44,6 @@ $(document).ready(function () {
         ev.preventDefault();
         // proAlertError('myAlert', 'Hello to everyone here! How are you doing?');
         // $form.trigger('reset');
-        proAlertError_br('Hello to you!'); 
+        proAlertInfo_tl('Hello to you! knsdjsdj'); 
     });
 });
