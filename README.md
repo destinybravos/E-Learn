@@ -11,17 +11,8 @@ repository.
 Programmers City is proudly sponsored by [Skyrootnet Services](https://skyrootservices.net/).
 
 Other uses resources of Skyrootnet Services are as follows;
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
+- **[Training Platform](https://training.skyrootservices.net/)**
+- **[Project Softwares & Thesis](https://project.skyrootservices.net)**
+<!-- hyphen(-) for just bullet/list-item, asterisk(**) for bold list-item -->
 
 
