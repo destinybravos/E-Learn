@@ -33,7 +33,7 @@ $(document).ready(function () {
                 }
             })
         }else{
-            alert('Password Mismatched!');
+            proAlertError('myAlert','Password Mismatched!');
         }
     });
 
