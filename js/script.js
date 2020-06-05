@@ -5,6 +5,7 @@ $(document).ready(function () {
         $email = $('input[name=email]').val();
         $pass = $('input[name=pass]').val();
         $cpass = $('input[name=cpass]').val();
+        $cpass = $('input[name=cpass]').val();
 
         if($pass === $cpass){
             $.ajax({

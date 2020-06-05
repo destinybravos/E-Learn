@@ -42,6 +42,16 @@
                     <input type="email" name="email" id="email" required class="form-control">
                 </div>
                 <div class="form-group">
+                    <label for="email">
+                        <i class="fa fa-layer-group"></i> User Type
+                    </label>
+                    <select required class="form-control" name="type">
+                        <option value="">Select User Type</option>
+                        <option value="1">Student</option>
+                        <option value="2">Lecturer</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="pass">
                         <i class="fa fa-key"></i> Password
                     </label>
