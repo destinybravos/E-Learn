@@ -64,11 +64,6 @@
     include_once 'footer.php'; 
     ?>
 
-
-<span id="tester">
-    
-</span>
-
 </body>
 
 </html>

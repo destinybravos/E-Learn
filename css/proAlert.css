@@ -34,11 +34,11 @@
 .alert-blue{
     background-color:rgba(37, 111, 223, 0.7);
     color:white;
-    box-shadow: 0 0 3px #999;
+    /* box-shadow: 0 0 3px #999; */
 }
 
 .alert-red{
     background-color:rgba(223, 37, 46, 0.7);
     color:white;
-    box-shadow: 0 0 3px #999;
+    /* box-shadow: 0 0 3px #999; */
 }
