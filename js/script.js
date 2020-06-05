@@ -5,16 +5,17 @@ $(document).ready(function () {
         $email = $('input[name=email]').val();
         $pass = $('input[name=pass]').val();
         $cpass = $('input[name=cpass]').val();
-        $cpass = $('input[name=cpass]').val();
+        $type = $('select[name=type]').val();
 
         if($pass === $cpass){
             $.ajax({
                 type:'post',
                 url: './ajax/add_user.php',
-                data: {f: $fname, e: $email, p:$pass},
+                data: {f: $fname, e: $email, p:$pass, t:$type},
                 dataType: 'json',
                 beforeSend: function () {
-                    
+                    $('#submit_btn').prop('disabled', true);
+                    $('#submit_btn').html('<i class="fa fa-spinner fa-pulse"></i> Processing');
                 },
                 success: function (response) {
                     if(response.status == 'success'){
@@ -22,10 +23,12 @@ $(document).ready(function () {
                         proAlertInfo_tr(response.msg);
                         setTimeout(() => {
                             window.location.href = 'login.php';
-                        }, 3000);
+                        }, 5000);
                     }else{
                         proAlertError('myAlert', response.msg);
                     }
+                    $('#submit_btn').prop('disabled', false);
+                    $('#submit_btn').html('<i class="fa fa-user-plus"></i> Add User');
                 },
                 error: function (xhr, status, msg) {
                     console.error(msg);

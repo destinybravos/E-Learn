@@ -64,7 +64,7 @@
                     <input type="password" name="cpass" id="cpass" required class="form-control">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success btn-sm">
+                    <button type="submit" class="btn btn-success btn-sm" id="submit_btn">
                         <i class="fa fa-user-plus"></i> Add User
                     </button>
                 </div>
