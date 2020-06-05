@@ -33,7 +33,7 @@ $(document).ready(function () {
                 }
             })
         }else{
-            alert('Password Mismatched!');
+            alert('Password Mismatched!'); 
         }
     });
 
@@ -42,6 +42,6 @@ $(document).ready(function () {
         ev.preventDefault();
         // proAlertError('myAlert', 'Hello to everyone here! How are you doing?');
         // $form.trigger('reset');
-        proAlertError_br('Hello to you!');
+        proAlertError_br('Hello to you!'); 
     });
 });
