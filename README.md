@@ -4,7 +4,7 @@ at Programmers City. It is their first project on GitHub which was used by them 
 and weakness in working as collabortors in a single project. That means, they are the collaborators in this 
 repository.
 
-# Sponsors
+### Sponsors
 Programmers City is proudly sponsored by [Skyrootnet Services](https://skyrootservices.net/).
 
 
