@@ -36,7 +36,7 @@
                 </div>
             </div>
             <hr>
-            <p class="copyright">Footer made with <i class="fa fa-heart"></i> by DemzyOfficial </p>
+            <p class="copyright">Footer made with <i class="fa fa-heart"></i> by skyroonet.net  @ 2020 </p>
         </div>
     </section>
     <!-- Dynamic Alert Notification Container -->

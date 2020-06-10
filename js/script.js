@@ -46,8 +46,32 @@ $(document).ready(function () {
     $('form[name=form_login]').on('submit', function (ev) {
         $form = $(this);
         ev.preventDefault();
-        // proAlertError('myAlert', 'Hello to everyone here! How are you doing?');
-        // $form.trigger('reset');
-        proAlertInfo_tl('Hello to you! knsdjsdj'); 
+        $email = $('input[name=email]').val();
+        $pass = $('input[name=pass]').val();
+        $rem = $('input[name=remember]').prop('checked');
+        // Building an ajax request
+        $.ajax({
+            type: 'post',
+            url: './ajax/login_user.php',
+            data: {email:$email, pass:$pass, rem:$rem},
+            dataType: 'json',
+            beforeSend: function () {
+                
+            },
+            success: function(response){
+                if(response.status == 'success'){
+                    proAlertInfo_tr(response.message);
+                    setTimeout(() => {
+                        window.location.href = 'portal/dashboard.php';
+                    }, 3000);
+                }else{
+                    proAlertError_tr(response.message);
+                }
+            },
+            error: function(xhr, status, msg){
+                console.error(msg);
+            }
+        })
+        
     });
 });

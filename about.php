@@ -17,10 +17,24 @@
 <body>
     <?php
     include_once 'head.php';
-    include_once 'footer.php';
     ?>
 
+    <div class="container" style="margin: 30px auto;">
+        <div class="row">
+            <div class="col-md-8">
+            
+            </div>
 
+
+            <div class="col-md-4">
+                <?php include_once "sidebar.php";  ?>
+            </div>
+        </div>
+    </div>
+
+<?php 
+    include_once 'footer.php';
+    ?>
 </body>
 
 </html>
