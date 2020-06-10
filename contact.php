@@ -23,7 +23,7 @@
         <div class="row">
             <!-- contact details -->
             <div class="col-md-8">
-                <img src="./img/contact11.png" alt="" style="width:100% ; margin-top:-7% ">
+                <img src="./img/contact1.png" alt="" style="width:100% ; margin-top:-7% ">
                 <h1 style="margin-top: -5% ">Get in Touch with us</h1>
                 <p>Contact us if you're interested in Learning or Teaching Online, contact
                     our capable team of IT professionals for more information and
@@ -112,17 +112,18 @@
                 <!-- contact form -->
                 <div class="container-fluid" style="max-width:700px; margin-top:30px">
                     <h3>Message Us Here</h3>
-                    <div class="row">
-                        <form method="POST" action="#">
+                    <form method="POST" action="#">
+                        <div class="row">
+
 
                             <div class="form-group col-md-6">
-                                <input class="form-control" placeholder="Your Name" id="name" required name="name" type="text" value="" style="box-shadow:none">
+                                <input class="form-control" placeholder="Your Name" id="name" required name="name" type="text" value="" style="box-shadow:none"> <br>
                                 <input class="form-control" placeholder="Email Address" id="email" required name="email" type="email" value="" style="box-shadow:none">
 
                             </div>
 
                             <div class="form-group col-md-6">
-                                <input class="form-control" placeholder="Phone Number" id="phone" required name="phone" type="tel" value="" style="box-shadow:none">
+                                <input class="form-control" placeholder="Phone Number" id="phone" required name="phone" type="tel" value="" style="box-shadow:none"> <br>
                                 <input class="form-control" placeholder="Subject" id="subject" required name="subject" type="text" value="" style="box-shadow:none">
                             </div>
 
@@ -136,9 +137,8 @@
                                 </div>
                             </div>
 
-                        </form>
-
-                    </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="container">
                     <div class="row">
