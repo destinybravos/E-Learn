@@ -158,6 +158,17 @@
 
     <?php
     include_once 'footer.php';
+
+    if(isset($_GET['status'])){
+        $status = $_GET['status'];
+        if($status == 'inserted'){
+            echo '<script> proAlertInfo_tr("Thanks for Contact!"); </script>';
+        }elseif($status == 'insert_error'){
+            echo '<script> proAlertError_tr("Please Try Again "); </script>';
+        }else{
+            echo '<script> proAlertError_tr("Unauthirzed!"); </script>';
+        }
+    }
     ?>
 </body>
 

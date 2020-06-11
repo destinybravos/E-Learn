@@ -9,15 +9,19 @@
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
+    $insert = $conn->query("INSERT INTO contact( name, phone_num, email, subject, message) 
+    VALUES('$name', '$phone_num', '$email','$subject','$message')");
 
-        $insert = $conn->query("INSERT INTO contact( name, phone_num, email, subject, message) 
-        VALUES('$name', '$phone_num', '$email','$subject','$message')");
-        header ('location:../contact.php');
+       if($insert){
+        header ('location:../contact.php?status=inserted');
+       }else{
+        header ('location:../contact.php?status=insert_error');
+       }
 
     }else{
         echo 'error in connection';
     }
 
-    
+    echo json_encode($result);
     
 ?>
