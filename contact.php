@@ -17,6 +17,7 @@
 <body>
     <?php
     include_once 'head.php';
+    include_once 'ajax/connect.php';
     ?>
 
     <div class="container" style="margin: 30px auto;">
@@ -47,7 +48,7 @@
                             </div>
                             <div class="media-body">
                                 <p>No.7 Umuerim Street</p>
-                                <p>Owerri North, Imo State.</p>
+                                <p>Owerri West, Imo State.</p>
                             </div>
                         </div>
                         <div class="media mt-0">
@@ -81,7 +82,7 @@
                             </div>
                             <div class="media-body">
                                 <p> Umuerim Junction FEPONEK</p>
-                                <p>Owerri North, Imo State.</p>
+                                <p>Owerri West, Imo State.</p>
                             </div>
                         </div>
                         <div class="media mt-0">
@@ -108,11 +109,10 @@
 
 
                 </div>
-
                 <!-- contact form -->
                 <div class="container-fluid" style="max-width:700px; margin-top:30px">
                     <h3>Message Us Here</h3>
-                    <form method="POST" action="#">
+                    <form method="POST" action="ajax/add_message.php">
                         <div class="row">
 
 
@@ -128,12 +128,12 @@
                             </div>
 
                             <div class="form-group col-md-12">
-                                <textarea class="form-control" style="resize:none;box-shadow:none"" placeholder=" Message Us Here" id="message" required name="message" cols="80" rows="10"></textarea>
+                                <textarea class="form-control" style="resize:none;box-shadow:none" name="message" placeholder=" Message Us Here" id="message" required name="message" cols="80" rows="10"></textarea>
                             </div>
 
                             <div class="form-group col-md-12 ">
                                 <div class="input-group">
-                                    <input class="btn btn-primary" id="" type="submit" value="Send message">
+                                    <input class="btn btn-primary" name="btn_submit" id="" type="submit" value="Send message">
                                 </div>
                             </div>
 
@@ -143,7 +143,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.891095433326!2d7.02807431413631!3d5.433508536381839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10425eca45151a89%3A0x842868296715c57f!2sFederal%20Polytechnic%20Nekede%20Owerri!5e0!3m2!1sen!2sng!4v1591804804335!5m2!1sen!2sng" width="700" height="350" frameborder="0" style="border:0; resize:none" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.869908130181!2d7.025900414765352!3d5.4367207960570685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10425eb554f4c57b%3A0xdc75dc624ad32894!2sProgrammers%20City!5e0!3m2!1sen!2sng!4v1591884088444!5m2!1sen!2sng" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                         </div>
                     </div>
                 </div>
