@@ -14,7 +14,7 @@
 </head>
 <body>
 <?php 
- $page_tag = '<i class="fa fa-tachometer-alt"></i> Dashboard';
+ $page_tag = '<i class="fa fa-user"></i> Profile';
 ?>
 <?php include_once 'nav.php' ?>
 
