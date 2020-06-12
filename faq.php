@@ -25,7 +25,7 @@
                 <div id="accordion" class="mb-3">
                     <div class="card">
                         <div class="card-header">
-                        <a href="#first-card" class="card-link" data-toggle="collapse">How to create an account </a>
+                        <a href="#first-card" class="card-link" data-toggle="collapse"><i class="fa fa-question-circle"></i> How to create an account </a>
                         </div>
                         <div id="first-card" class="collapse show" data-parent="#accordion">
                          <div class="card-body">
@@ -40,7 +40,7 @@
                 <div id="accordion" class="mb-3">
                     <div class="card">
                         <div class="card-header">
-                        <a href="#second-card" class="card-link " data-toggle="collapse">How to join class </a>
+                        <a href="#second-card" class="card-link " data-toggle="collapse"> <i class="fa fa-question-circle"></i> How to join class </a>
                         </div>
                         <div id="second-card" class="collapse show" data-parent="#accordion">
                          <div class="card-body">
@@ -55,7 +55,7 @@
                 <div id="accordion" class="mb-5">
                     <div class="card">
                         <div class="card-header">
-                        <a href="#three-card" class="card-link" data-toggle="collapse">How to verify my account </a>
+                        <a href="#three-card" class="card-link" data-toggle="collapse"><i class="fa fa-question-circle"></i> How to verify my account </a>
                         </div>
                         <div id="three-card" class="collapse show" data-parent="#accordion">
                          <div class="card-body">
