@@ -16,8 +16,17 @@ html, body{
 #sidebar.slim{
     width: 100px;
 }
+#sidebar.slim a{
+    font-size: 1.5rem;
+    text-align: center;
+}
 #user-detail{
     text-align: center;
+}
+#sidebar ul.navbar-nav{
+    width:100%;
+    text-align:left;
+    margin:auto;
 }
 .user-image-container{
     height: 70px;
@@ -31,6 +40,13 @@ html, body{
 }
 .user-image-container img{
     max-width: 100%;
+}
+#user-detail.slim strong{
+    display:none;
+}
+#user-detail.slim .user-image-container{
+    height: 40px;
+    width: 40px;
 }
 
 .nav-label{
@@ -105,4 +121,9 @@ html, body{
     #top_menu li.nav-item a{
         padding: 0 0.5rem;
     }
+}
+
+/* Profile Edit */
+span.edit{
+    display:none;
 }

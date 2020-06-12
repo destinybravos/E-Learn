@@ -8,17 +8,28 @@ if(isset($_SESSION['active_email']) and $_SESSION['active_email'] != ''){
         $user_data = $user->fetch_array();
         $active_user = $user_data['firstname'] . ' ' . $user_data['lastname'];
         $active_user_photo = $user_data['photo'];
+        $firstname = $user_data['firstname'];
+        $lastname = $user_data['lastname'];
+        $email = $user_data['email'];
+        $phone = $user_data['phone'];
     }else{
         header('location:../login.php?problem=user_not_found');
     }
 }else{
     header('location:../login.php?problem=invalid_session');
 }
+
+if(isset($_SESSION['slim'])){
+    $slim_status = $_SESSION['slim'];
+}else{
+    $slim_status = '';
+}
+    
 ?>
 
 <!-- Sidebar -->
-<nav id="sidebar">
-    <div id="user-detail">
+<nav id="sidebar" class="<?php echo $slim_status ?>">
+    <div id="user-detail" class="<?php echo $slim_status; ?>">
         <a href="profile.php">
             <div class="user-image-container">
                 <img src="imgs/profile/<?php echo $active_user_photo; ?>" alt="profile image">
@@ -35,26 +46,27 @@ if(isset($_SESSION['active_email']) and $_SESSION['active_email'] != ''){
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a href="dashboard.php" class="nav-link">
-                    <i class="fa fa-tachometer-alt"></i> <label class="nav-label"> Dashboard </label>
+                    <i class="fa fa-tachometer-alt"></i> <label class="nav-label <?php echo $slim_status ?>"> Dashboard </label>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="profile.php" class="nav-link">
-                    <i class="fa fa-user"></i> <label class="nav-label"> User's Profile</label>
+                    <i class="fa fa-user"></i> <label class="nav-label  <?php echo $slim_status ?>"> User's Profile</label>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="logout.php" class="nav-link">
-                    <i class="fa fa-sign-out-alt"></i> <label class="nav-label"> Logout User</label>
+                    <i class="fa fa-sign-out-alt"></i> <label class="nav-label <?php echo $slim_status ?>"> Logout User</label>
                 </a>
             </li>
         </ul>
     </nav>
 
-    <div id="btn-toggle-nav" class="">
+    <div id="btn-toggle-nav" class="<?php echo $slim_status ?>">
         <span>
             <i class="fa fa-chevron-left"></i>
         </span>
     </div>
 </nav>
+
 

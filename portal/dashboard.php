@@ -18,7 +18,7 @@
 ?>
 <?php include_once 'nav.php' ?>
 
-<div id="site_content">
+<div id="site_content" class="<?php echo $slim_status ?>">
 <?php
     include_once 'top_nav.php';
 ?>

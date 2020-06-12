@@ -11,7 +11,9 @@
     $check_user = $conn->query("SELECT * FROM users WHERE email='$email' AND password='$password'");
 
     if($check_user->num_rows > 0){
-        $_SESSION['active_email'] = $email;
+        $data = $check_user->fetch_assoc();
+        $_SESSION['active_email'] = $data['email'];
+        $_SESSION['active_user_id'] = $data['id'];
         $result = [
             'status' => 'success',
             'message' => '<i class="fa fa-circle-notch fa-pulse"></i> Login successful! Redirecting...!'
