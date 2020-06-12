@@ -39,6 +39,8 @@
 
 </div>
 
+<script src="../js/jquery.js"></script>
+<script src="../bootstrap4/js/bootstrap.js"></script>
+<script src="js/dashboard_script.js"></script>
 </body>
-
 </html>

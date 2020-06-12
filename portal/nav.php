@@ -29,10 +29,32 @@ if(isset($_SESSION['active_email']) and $_SESSION['active_email'] != ''){
                 </strong>
             </div>
         </a>
-        <button class="btn btn-default btn-sm mt-2">
-            <i class="fa fa-sign-out-alt"></i>
-            <a href="logout.php">Logout User</a>
-        </button>
+    </div>
+
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="dashboard.php" class="nav-link">
+                    <i class="fa fa-tachometer-alt"></i> <label class="nav-label"> Dashboard </label>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="profile.php" class="nav-link">
+                    <i class="fa fa-user"></i> <label class="nav-label"> User's Profile</label>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="logout.php" class="nav-link">
+                    <i class="fa fa-sign-out-alt"></i> <label class="nav-label"> Logout User</label>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="btn-toggle-nav" class="">
+        <span>
+            <i class="fa fa-chevron-left"></i>
+        </span>
     </div>
 </nav>
 

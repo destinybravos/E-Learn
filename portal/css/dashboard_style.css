@@ -9,6 +9,12 @@ html, body{
     background-color: rgb(3, 1, 31);
     left: 0;
     color: white;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+}
+#sidebar.slim{
+    width: 100px;
 }
 #user-detail{
     text-align: center;
@@ -27,10 +33,43 @@ html, body{
     max-width: 100%;
 }
 
+.nav-label{
+    /* display:none; */
+    cursor:pointer;
+}
+.nav-label.slim{
+    display:none !important;
+}
+#btn-toggle-nav{
+    display: block;
+    padding:0.3rem;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    margin:50px auto 10px;
+    border:thick solid #333333;
+    border-radius: 100%;
+    color:  rgb(3, 1, 31);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+}
+#btn-toggle-nav.slim{
+    transform: rotateZ(180deg);
+}
+
 /* Site Content */
 #site_content{
     width: auto;
     margin-left: 250px;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+}
+#site_content.slim{
+    margin-left: 100px;
 }
 #top_nav{
     background-color: white;
@@ -52,7 +91,10 @@ html, body{
     #sidebar{
         left: -250px;
     }
-    #site_content{
+    #sidebar.slim{
+        left: -100px;
+    }
+    #site_content, #site_content.slim{
         margin-left: 0;
     }
     #top_menu{
