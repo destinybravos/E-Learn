@@ -1,0 +1,129 @@
+html, body{
+    background-color: #e9ecef;
+}
+/* Side Nav */
+#sidebar{
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    background-color: rgb(3, 1, 31);
+    left: 0;
+    color: white;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+}
+#sidebar.slim{
+    width: 100px;
+}
+#sidebar.slim a{
+    font-size: 1.5rem;
+    text-align: center;
+}
+#user-detail{
+    text-align: center;
+}
+#sidebar ul.navbar-nav{
+    width:100%;
+    text-align:left;
+    margin:auto;
+}
+.user-image-container{
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+    margin: 2rem auto 0.5rem;
+}
+.user-image-container img{
+    max-width: 100%;
+}
+#user-detail.slim strong{
+    display:none;
+}
+#user-detail.slim .user-image-container{
+    height: 40px;
+    width: 40px;
+}
+
+.nav-label{
+    /* display:none; */
+    cursor:pointer;
+}
+.nav-label.slim{
+    display:none !important;
+}
+#btn-toggle-nav{
+    display: block;
+    padding:0.3rem;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    margin:50px auto 10px;
+    border:thick solid #333333;
+    border-radius: 100%;
+    color:  rgb(3, 1, 31);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+}
+#btn-toggle-nav.slim{
+    transform: rotateZ(180deg);
+}
+
+/* Site Content */
+#site_content{
+    width: auto;
+    margin-left: 250px;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+}
+#site_content.slim{
+    margin-left: 100px;
+}
+#top_nav{
+    background-color: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 2px #333333;
+    color: #555555;
+}
+#page_content{
+    min-height: 500px;
+    padding: 2rem;
+}
+.navbar a{
+    color: inherit;
+}
+
+@media screen and (max-width:767px){
+    #sidebar{
+        left: -250px;
+    }
+    #sidebar.slim{
+        left: -100px;
+    }
+    #site_content, #site_content.slim{
+        margin-left: 0;
+    }
+    #top_menu{
+        flex-basis: unset;
+    }
+    #top_menu .navbar-nav, #top_menu .navbar-nav li.nav-item{
+        display: inline-block !important;
+    }
+    #top_menu li.nav-item a{
+        padding: 0 0.5rem;
+    }
+}
+
+/* Profile Edit */
+span.edit{
+    display:none;
+}
