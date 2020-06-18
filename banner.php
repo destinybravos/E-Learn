@@ -1,7 +1,7 @@
 <!--<div style="background-image:url('img/bg2.png'); min-height:74vh; width:100%; background-size:cover; background-position:center;">
 
 </div>-->
-<div id="demo" class="carousel slide" data-ride="carousel">
+<div id="demo" class="carousel slide" data-ride="carousel" style="max-height:90vh; overflow-Y:hidden;">
 
   <!-- Indicators -->
   <ul class="carousel-indicators">
