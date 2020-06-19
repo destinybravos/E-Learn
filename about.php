@@ -118,10 +118,12 @@
             $('html').animate({
                 'scrollTop': (top - top_hd)
             }, 'slow', function(){
-                // window.location.hash = hash;
+                window.location.hash = hash;
+                $('html').scrollTop(top - top_hd);
             });
-            
         });
+
+        
     </script>
 </body>
 

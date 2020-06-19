@@ -12,9 +12,13 @@ html, body{
     transition: all 0.3s linear;
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
+    z-index: 2;
 }
 #sidebar.slim{
     width: 100px;
+}
+#sidebar.open{
+    left:0 !important;
 }
 #sidebar.slim a{
     font-size: 1.5rem;
@@ -93,6 +97,7 @@ html, body{
     top: 0;
     box-shadow: 0 0 2px #333333;
     color: #555555;
+    z-index: 3;
 }
 #page_content{
     min-height: 500px;

@@ -24,7 +24,7 @@
                         </li>
                     </ul>
                 </div>
-                <button type="button" class="navbar-toggler" data-target="#menu" data-toggle="collapse">
+                <button type="button" id="toggle-btn" class="navbar-toggler" data-target="#menu" data-toggle="collapse">
                     <span class="fa fa-bars"></span>
                 </button>
             </div>

@@ -14,6 +14,21 @@ $('#btn-toggle-nav').on('click', function(){
     });
 });
 
+// Mobile Navbar
+$('#toggle-btn').on('click', function () {
+    $('#sidebar').toggleClass('open');
+});
+
+// Styling SideNav at Mobile
+$window_width = $(window).width();
+$topnav_height = $('#top_nav').height();
+if(parseInt($window_width) <= 767){
+    $('#user-detail').css('margin-top', ($topnav_height + 10));
+}else{
+    $('#user-detail').css('margin-top', 'auto');
+}
+// console.log($topnav_height);
+
 $(document).ready(function () {
     $('#form_details').on('dblclick', 'label', function () {
         $(this).children('span.norm').slideUp();
