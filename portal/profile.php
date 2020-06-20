@@ -31,8 +31,13 @@
                         <div class="card-body">
                         <div id="profile-img-container">
                             <img src="imgs/profile/<?php echo $active_user_photo; ?>" alt="img">
-                            <span>
-                                upload
+                            <div>
+                                <button type="button" id="btn_upload_img" class="btn btn-primary">
+                                    <i class="fa fa-camera"></i> Uplaod Image
+                                </button>
+                            </div>
+                            <span style="display: none;">
+                            <input type="file" name="photo_upload" id="photo_upload">
                             </span>
                         </div>
                         </div>
@@ -93,7 +98,25 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label> <strong>User Level: </strong> <?php echo '' ?></label>
+                                <label> <strong>User Level: </strong> 
+                                    <?php
+                                        if($user_level == 1){
+                                            echo 'Student';
+                                        }elseif($user_level == 2){
+                                            echo 'Lecturer';
+                                        }elseif($user_level == 3){
+                                            echo 'Admin';
+                                        }elseif($user_level == 1){
+                                            echo 'Super Admin';
+                                        }
+                                    ?>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label> <strong>Account Status: </strong> <?php echo $status ?></label>
+                            </div>
+                            <div class="form-group">
+                                <label> <strong>School Level: </strong> <?php echo '' ?></label>
                             </div>
                         </div>
                     </div>

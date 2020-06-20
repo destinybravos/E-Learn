@@ -12,6 +12,9 @@ if(isset($_SESSION['active_email']) and $_SESSION['active_email'] != ''){
         $lastname = $user_data['lastname'];
         $email = $user_data['email'];
         $phone = $user_data['phone'];
+        $school_id = $user_data['school_id'];
+        $user_level = $user_data['user_level'];
+        $status = $user_data['status'];
     }else{
         header('location:../login.php?problem=user_not_found');
     }

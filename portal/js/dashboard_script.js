@@ -61,4 +61,30 @@ $(document).ready(function () {
         
     });
 
-})
+
+    $('#btn_upload_img').on('click', function () {
+        $('#photo_upload').trigger('click');
+    });
+
+
+});
+
+$('#photo_upload').on('change', function () {
+    $file = $('#photo_upload')[0].files[0];
+    var form_data = new FormData();
+    form_data.append('test','kolok');
+    console.log(form_data);
+    // $.ajax({
+    //     type: 'post',
+    //     url: 'upload_img.php',
+    //     data: form_data,
+    //     // dataType: 'json',
+    //     beforeSend: function () {
+    //         $('#btn_upload_img').html('<i class="fa fa-spinner fa-pulse"></i> Uploading....');
+    //     },
+    //     success: function (response) {
+    //         // proAlertError_tr('response.msg');
+    //         console.error(response);
+    //     }
+    // });
+});

@@ -132,3 +132,8 @@ html, body{
 span.edit{
     display:none;
 }
+
+/* Profile Image */
+#profile-img-container{
+    text-align: center;
+}
