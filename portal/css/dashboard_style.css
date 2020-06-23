@@ -137,3 +137,6 @@ span.edit{
 #profile-img-container{
     text-align: center;
 }
+#profile-img-container img{
+    max-width: 100%;
+}

@@ -83,19 +83,27 @@ $('#photo_upload').on('change', function () {
             data: form_data,
             processData: false,
             contentType: false,
-            // dataType: 'json',
+            dataType: 'json',
             beforeSend: function () {
                 $('#btn_upload_img').html('<i class="fa fa-spinner fa-pulse"></i> Uploading....');
             },
             success: function (response) {
-                // proAlertError_tr('response.msg');
-                console.log(response);
+                if(response.status == 'success'){
+                    $img = $('#profile-img-container img');
+                    $img.fadeOut();
+                    $img.attr('src', 'imgs/profile/' + response.newimage);
+                    $img.fadeIn();
+                    // Side Image
+                    $('.user-image-container img').attr('src',  'imgs/profile/' + response.newimage);
+                }else{
+                    proAlertError_tr(response.message);
+                }
             },
             error: function (xhr, status, message) {
                 console.log(message);
             },
             complete: function(){
-                
+                $('#btn_upload_img').html('<i class="fa fa-camera"></i> Uplaod Image');
             }
         });
     }
