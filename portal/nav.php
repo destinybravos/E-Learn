@@ -58,6 +58,16 @@ if(isset($_SESSION['slim'])){
                 </a>
             </li>
             <li class="nav-item">
+                <a href="schools.php" class="nav-link">
+                    <i class="fas fa-school"></i> <label class="nav-label <?php echo $slim_status ?>"> Manage Schools</label>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="users.php" class="nav-link">
+                    <i class="fa fa-users"></i> <label class="nav-label <?php echo $slim_status ?>"> Manage Users </label>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="logout.php" class="nav-link">
                     <i class="fa fa-sign-out-alt"></i> <label class="nav-label <?php echo $slim_status ?>"> Logout User</label>
                 </a>

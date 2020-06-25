@@ -108,3 +108,60 @@ $('#photo_upload').on('change', function () {
         });
     }
 });
+
+// Fetch Schools
+function fetch_school_list() {
+    $.ajax({
+        type : 'post',
+        url : './ajax/mng_school.php',
+        data: {action: 'fetch'},
+        dataType: 'html',
+        success: function (list){
+            $('#sch_list_contanier').html(list);
+        },
+        error: function (xhr, status, msg) {
+            console.error(msg);
+        }
+    });
+}
+fetch_school_list();
+
+$('form[name=frm_addSchool]').on('submit', function(ev){
+    ev.preventDefault();
+    $frmData = new FormData();
+    $frmData.append('sname', $('input[name=sch_name]').val());
+    $frmData.append('stype', $('#sch_type').val());
+    $frmData.append('sloc', $('#loc').val());
+    $frmData.append('sstate', $('#state').val());
+    $frmData.append('action', 'add');
+    $.ajax({
+        type : 'post',
+        url : './ajax/mng_school.php',
+        data: $frmData,
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+        beforeSend:function() {
+            $('#btn_add_sch').html('<i class="fa fa-spinner fa-spin"></i> Saving Data... ');
+        },
+        success: function (response){
+            if(response.status == 'success'){
+                proAlertInfo_tr('Institution Added!');
+                $('form[name=frm_addSchool]').trigger('reset');
+                fetch_school_list();
+            }else if(response.status == 'exist'){
+                proAlertError_tr('School Already Exist!');
+            }else{
+                proAlertError_tr('An Error Occured');
+            }
+            // console.log(response);
+        },
+        error: function (xhr, status, msg) {
+            console.error(msg);
+        },
+        complete: function(){
+            $('#btn_add_sch').html('<i class="fa fa-save"></i> Save School Details');
+        }
+    })
+    console.log($frmData);
+})

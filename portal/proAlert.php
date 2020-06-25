@@ -7,5 +7,9 @@
     </div>
 </div>
 
+<!--  -->
+<span id="alert-container" style="z-index: 3;"></span>
+<!--  -->
+
 
 <script src="js/proAlert.js"></script>
