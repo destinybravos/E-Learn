@@ -140,3 +140,8 @@ span.edit{
 #profile-img-container img{
     max-width: 100%;
 }
+
+/* School List Icons */
+li.sch_list .fa{
+    cursor: pointer;
+}

@@ -164,4 +164,25 @@ $('form[name=frm_addSchool]').on('submit', function(ev){
         }
     })
     console.log($frmData);
+});
+
+$('#sch_list_contanier').on('click', '.del_sch_list', function () {
+    $id = $(this).parent('span').parent('li').attr('id');
+    $.ajax({
+        type : 'post',
+        url : './ajax/mng_school.php',
+        data: {action: 'delete', id:$id},
+        dataType: 'json',
+        success: function (response){
+            if(response.status == 'success'){
+                proAlertInfo_tr("School deleted successfully");
+                fetch_school_list();
+            }else{
+                proAlertError_tr('Unable to Delete School');
+            }
+        },
+        error: function (xhr, status, msg) {
+            console.error(msg);
+        }
+    });
 })
