@@ -92,7 +92,7 @@
 
                 </div>
                 <div class="col-md-6">
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-header">
                             <i class="fa fa-cogs"></i> Account Info
                         </div>
@@ -116,11 +116,65 @@
                                 <label> <strong>Account Status: </strong> <?php echo $status ?></label>
                             </div>
                             <div class="form-group">
-                                <label> <strong>School Level: </strong> <?php echo '' ?></label>
+                                <label style="display: block;"> <strong>School: </strong>
+                                   <span class="norm" id="sch_id">
+                                   <?php
+                                        if($school_id == 0){
+                                            echo 'No School Selected';
+                                        }else{
+                                            $fetch_school = $conn->query("SELECT name FROM schools WHERE school_id='$school_id'");
+                                            if($fetch_school->num_rows > 0){
+                                                $sch_detail = $fetch_school->fetch_array();
+                                                echo $sch_detail['name'];
+                                            }
+                                        }
+                                    ?>
+                                   </span>
+                                   <span class="edit">
+                                       <select name="sel_schools" id="sel_schools" class="form-control" style="display:inline-block; width:auto;">
+                                           <option value="">Select School</option>
+                                           <?php
+                                                $fetch_school = $conn->query("SELECT school_id,name FROM schools");
+                                                while ($schools = $fetch_school->fetch_array()) {
+                                                    echo '
+                                                        <option value="' . $schools['school_id'] . '"> ' . $schools['name'] . ' </option>
+                                                    ';
+                                                }
+                                           ?>
+                                       </select>
+                                   </span>
+                                   <span id="edt_sch_profile" style="float: right; cursor:pointer;">
+                                        <i class="fa fa-edit"></i>
+                                    </span>
+                                </label>
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            <strong><i class="fas fa-school"></i> School Info</strong>
+                        </div>
+                        <div class="card-body">
+                            <?php
+                            if($school_id == 0){
+                                echo '<div class="alert alert-danger" id="sch_det_alert">
+                                    <strong>NOTICE: </strong> You have not selected your school! Please select school.
+                                </div>';
+                            }                           
+                            ?>
+                            <div class="form_group">
+                                Name of Institution: <strong id="name_ins"></strong>
+                            </div>
+                            <div class="form_group">
+                                Name of Institution: <strong id="name_ins"></strong>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
         </div>
     </div>

@@ -35,15 +35,20 @@ $(document).ready(function () {
         $(this).children('span.edit').slideDown();
     });
 
+    $('#edt_sch_profile').on('click', function () {
+        $(this).siblings('span.norm').slideUp();
+        $(this).siblings('span.edit').slideDown();
+    });
+
     $('span.edit').on('blur', 'input', function () {
         $this = $(this);
         $name = $(this).attr('name');
         $value = $(this).val();
         $.ajax({
             type: 'post',
-            url: 'update_user_info.php',
+            url: './ajax/update_user_info.php',
             dataType: 'json',
-            data: {name: $name, value: $value},
+            data: {name: $name, value: $value, what2do:'update_biodata'},
             beforeSend:function () {
                 
             },
@@ -56,6 +61,10 @@ $(document).ready(function () {
                 }else{
                     proAlertError_tr($name + ' field was unable to update');
                 }
+                console.log(result);
+            },
+            error: function (xhr, sta, msg) {
+                console.log(msg);
             }
         });
         
@@ -180,6 +189,31 @@ $('#sch_list_contanier').on('click', '.del_sch_list', function () {
             }else{
                 proAlertError_tr('Unable to Delete School');
             }
+        },
+        error: function (xhr, status, msg) {
+            console.error(msg);
+        }
+    });
+});
+
+// Change/Select Schools
+$('#sel_schools').on('change', function () {
+    $id = $(this).val();
+    $.ajax({
+        type : 'post',
+        url : './ajax/update_user_info.php',
+        data: {what2do: 'update_sch_id', id:$id},
+        dataType: 'json',
+        success: function (result){
+            if(result.status == 'updated'){
+                $('#sch_id').text(result.school_name);
+                $('#sch_id').slideDown();
+                $('#sch_id').siblings('span.edit').slideUp();
+                proAlertInfo_tr('School Details Updated');
+            }else{
+                proAlertError_tr("An Error Occured");
+            }
+            // console.log(result);
         },
         error: function (xhr, status, msg) {
             console.error(msg);

@@ -142,6 +142,7 @@ span.edit{
 }
 
 /* School List Icons */
-li.sch_list .fa{
-    cursor: pointer;
+li.sch_list span{
+    cursor: pointer !important;
+    display: inline-block;
 }
