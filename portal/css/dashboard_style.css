@@ -126,7 +126,12 @@ html, body{
     #top_menu li.nav-item a{
         padding: 0 0.5rem;
     }
+    .container, .col-md-6{
+        padding: 0 !important;
+    }
 }
+
+
 
 /* Profile Edit */
 span.edit{

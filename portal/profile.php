@@ -164,11 +164,17 @@
                                 </div>';
                             }                           
                             ?>
-                            <div class="form_group">
-                                Name of Institution: <strong id="name_ins"></strong>
+                            <div class="form_group mb-3">
+                                Name: <strong id="name_ins"></strong>
                             </div>
-                            <div class="form_group">
-                                Name of Institution: <strong id="name_ins"></strong>
+                            <div class="form_group mb-3">
+                                Type: <strong id="type_ins"></strong>
+                            </div>
+                            <div class="form_group mb-3">
+                                Address: <strong id="add_ins"></strong>
+                            </div>
+                            <div class="form_group mb-3">
+                                State: <strong id="state_ins"></strong>
                             </div>
                         </div>
                     </div>

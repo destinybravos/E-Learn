@@ -209,6 +209,7 @@ $('#sel_schools').on('change', function () {
                 $('#sch_id').text(result.school_name);
                 $('#sch_id').slideDown();
                 $('#sch_id').siblings('span.edit').slideUp();
+                fetch_sch_detail();
                 proAlertInfo_tr('School Details Updated');
             }else{
                 proAlertError_tr("An Error Occured");
@@ -219,4 +220,30 @@ $('#sel_schools').on('change', function () {
             console.error(msg);
         }
     });
-})
+});
+
+// Fetch User's School Detail
+function fetch_sch_detail() {
+    $.ajax({
+        type : 'post',
+        url : './ajax/mng_school.php',
+        data: {action: 'fetch_user_sch'},
+        dataType: 'json',
+        success: function (result){
+            if(result.id > 0){
+                $('#name_ins').text(result.name);
+                $('#type_ins').text(result.type);
+                $('#state_ins').text(result.state);
+                $('#add_ins').text(result.address);
+                $('#sch_det_alert').slideUp();
+            }else{
+                proAlertError_tr("You have not selected an Institution! Please do so.");
+            }
+            console.log(result);
+        },
+        error: function (xhr, status, msg) {
+            console.error(msg);
+        }
+    });
+}
+fetch_sch_detail();

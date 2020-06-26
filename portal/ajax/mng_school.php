@@ -1,7 +1,8 @@
 <?php
+session_start();
 include_once '../../ajax/connect.php';
 
-
+    $user_id = $_SESSION['active_user_id'];
 
     $what2do = $_POST['action'];
 
@@ -49,5 +50,29 @@ include_once '../../ajax/connect.php';
             echo json_encode(['status'=>'success']);
         }else{
             echo json_encode(['status'=>'error']);
+        }
+    }elseif ($what2do == 'fetch_user_sch') {
+        // Get the User School Id
+        $user = $conn->query("SELECT * FROM users WHERE id='$user_id'");
+        $user_data = $user->fetch_array();
+        $sch_id = (int)$user_data['school_id'];
+        // Use the school ID to Fetch School Details
+        if($sch_id > 0){
+            $school = $conn->query("SELECT * FROM schools WHERE school_id='$sch_id'");
+            $school_data = $school->fetch_array();
+            $sch_name = $school_data['name'];
+            $sch_type = $school_data['type'];
+            $sch_add = $school_data['address'];
+            $sch_state = $school_data['state'];
+
+            echo json_encode([
+                'name'=>$sch_name,
+                'id'=>$sch_id,
+                'address'=>$sch_add,
+                'type'=>$sch_type,
+                'state'=>$sch_state
+            ]);
+        }else{
+            echo json_encode(['id'=>0]);
         }
     }
