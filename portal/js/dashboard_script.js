@@ -239,7 +239,7 @@ function fetch_sch_detail() {
             }else{
                 proAlertError_tr("You have not selected an Institution! Please do so.");
             }
-            console.log(result);
+            // console.log(result);
         },
         error: function (xhr, status, msg) {
             console.error(msg);
@@ -247,3 +247,50 @@ function fetch_sch_detail() {
     });
 }
 fetch_sch_detail();
+
+// fetch all users
+function fetch_users() {
+    $.ajax({
+        type : 'post',
+        url : './ajax/mng_users.php',
+        data: {action: 'fetch_users'},
+        dataType: 'html',
+        success: function (result){
+            $('#userdata').html(result);
+            // console.log(result);
+        },
+        error: function (xhr, status, msg) {
+            console.error(msg);
+        }
+    });
+}
+fetch_users();
+
+// setTimeout(() => {
+//     what to do
+// }, time);
+// setInterval(() => {
+//     what to do
+// }, interval);
+
+// search all users
+function search_users(recieved_data) {
+    $.ajax({
+        type : 'post',
+        url : './ajax/search_users.php',
+        data: {user: recieved_data},
+        dataType: 'html',
+        success: function (result){
+            $('#userdata').html(result);
+            // console.log(result);
+        },
+        error: function (xhr, status, msg) {
+            console.error(msg);
+        }
+    });
+}
+
+$('#srch_users').on('keyup', function () {
+    $data = $(this).val();
+    search_users($data);
+})

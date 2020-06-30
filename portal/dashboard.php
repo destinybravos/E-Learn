@@ -41,6 +41,7 @@
 
 <script src="../js/jquery.js"></script>
 <script src="../bootstrap4/js/bootstrap.js"></script>
+<?php  include_once 'proAlert.php'; ?>
 <script src="js/dashboard_script.js"></script>
 </body>
 </html>
