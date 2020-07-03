@@ -294,3 +294,24 @@ $('#srch_users').on('keyup', function () {
     $data = $(this).val();
     search_users($data);
 })
+
+function fetchStatistics(){
+    $.ajax({
+        type : 'post',
+        url : './ajax/statistics.php',
+        data: {},
+        dataType: 'json',
+        success: function (response){
+            $('#no_schools').text(response.no_schools);
+            $('#no_users').text(response.no_users);
+            console.log(response);
+        },
+        error: function (xhr, status, msg) {
+            console.error(msg);
+        }
+    });
+}
+fetchStatistics();
+setInterval(() => {
+    fetchStatistics();
+}, 3000);

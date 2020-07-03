@@ -24,17 +24,49 @@
 ?>
 
     <div id="page_content">
-        <div class="">
-            <h3>
-                Dummy Content
-            </h3>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus facere fugiat ut accusantium 
-                provident quidem temporibus, molestias sunt odio eaque? Ex sint numquam et magnam eos deleniti quia 
-                ipsam facilis.
-            </p>
-        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 id="no_users">0</h1>
+                            <div style="font-size:1.2rem;"> <i class="fa fa-users"></i> Users</div>
+                            <small><a href="users.php">View Registered Users</a></small>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 id="no_schools">0</h1>
+                            <div style="font-size:1.2rem;"> <i class="fas fa-school"></i>  Schools</div>
+                            <small><a href="schools.php">View Registered Schools</a></small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>0</h1>
+                            <div style="font-size:1.2rem;">Users</div>
+                            <small><a href="users.php">View Registered Users</a></small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>0</h1>
+                            <div style="font-size:1.2rem;">Users</div>
+                            <small><a href="users.php">View Registered Users</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
