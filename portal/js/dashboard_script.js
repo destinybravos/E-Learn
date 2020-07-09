@@ -304,7 +304,7 @@ function fetchStatistics(){
         success: function (response){
             $('#no_schools').text(response.no_schools);
             $('#no_users').text(response.no_users);
-            console.log(response);
+            // console.log(response);
         },
         error: function (xhr, status, msg) {
             console.error(msg);
@@ -315,3 +315,35 @@ fetchStatistics();
 setInterval(() => {
     fetchStatistics();
 }, 3000);
+
+// Switching User Account Activiness
+$('#userdata').on('click', '.active-switch', function () {
+    $this = $(this);
+    $state = $this.prop('checked');
+    $user_id = $this.parent('div').parent('td').parent('tr').attr('id');
+    $.ajax({
+        type : 'post',
+        url : './ajax/mng_users.php',
+        data: {action: 'switch_activeness', state: $state, user_id: $user_id},
+        // dataType: 'html',
+        beforeSend: function () {
+            if($state == true){
+                $this.siblings('label').text('active');
+            }else{
+                $this.siblings('label').text('inactive');
+            }
+        },
+        success: function (result){
+            if(result == 0){
+                if($state == true){
+                    $this.siblings('label').text('inactive');
+                }else{
+                    $this.siblings('label').text('active');
+                }
+            }
+        },
+        error: function (xhr, status, msg) {
+            console.error(msg);
+        }
+    });
+});

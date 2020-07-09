@@ -19,12 +19,28 @@ if($action == 'fetch_users'){
             $user_type = 'Super Admin';
         }
 
+        // Determine if Account is active or not
+        $status = $user_data['status'];
+        if($status == 'active'){
+            $switch = '<div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input active-switch" id="switch' . $user_data['id'] . '" checked>
+                    <label class="custom-control-label" for="switch' . $user_data['id'] . '">'. $user_data['status'] .'</label>
+                </div> ';
+        }else{
+            $switch = '<div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input active-switch" id="switch' . $user_data['id'] . '">
+                <label class="custom-control-label" for="switch' . $user_data['id'] . '">'. $user_data['status'] .'</label>
+            </div> ';
+        }
+
         // Build the HTML Records
         $user_html .= '<tr id="' . $user_data['id'] . '">
                 <td>' . $user_data['firstname'] . ' ' . $user_data['lastname'] . '</td>
                 <td>'. fetch_school($user_data['school_id'], $conn) .'</td>
                 <td>'. $user_type .'</td>
-                <td>'. $user_data['status'] .'</td>
+                <td>
+                ' . $switch . '
+                </td>
                 <td style="cursor:pointer;">
                     <i class="fa fa-eye text-success"></i> &nbsp; <i class="fa fa-trash text-danger"></i> 
                 </td>
@@ -32,6 +48,21 @@ if($action == 'fetch_users'){
     }
 
     echo $user_html;
+}elseif($action == 'switch_activeness'){
+    $state = $_POST['state'];
+    $user_id = $_POST['user_id'];
+    if($state == 'true'){
+        $status = 'active';
+    }else{
+        $status = 'inactive';
+    }
+    // Update Database(User) Status
+    $update = $conn->query("UPDATE users SET status='$status' WHERE id='$user_id'");
+    if($update){
+        echo 1;
+    }else{
+        echo 0;
+    }
 }
 
 
