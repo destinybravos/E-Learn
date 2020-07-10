@@ -42,7 +42,7 @@ if($action == 'fetch_users'){
                 ' . $switch . '
                 </td>
                 <td style="cursor:pointer;">
-                    <i class="fa fa-eye text-success"></i> &nbsp; <i class="fa fa-trash text-danger"></i> 
+                    <i class="fa fa-eye text-success view-user"></i> &nbsp; <i class="fa fa-trash text-danger delete-user"></i> 
                 </td>
             </tr>';
     }
@@ -63,6 +63,22 @@ if($action == 'fetch_users'){
     }else{
         echo 0;
     }
+}elseif($action == 'get_a_user'){
+    $user_id = $_POST['user_id'];
+    // Query User Details from Database
+    $user_det = $conn->query("SELECT * FROM users WHERE id='$user_id'");
+    $user_data = $user_det->fetch_array();
+    $html = '
+    <div class="card" style="margin-bottom: 30px;">
+        <div class="card-body">
+        <div id="profile-img-container">
+            <img src="imgs/profile/'. $user_data['photo'] .'" alt="img">
+        </div>
+        </div>
+    </div>
+    ';
+
+    echo $html;
 }
 
 

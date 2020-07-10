@@ -13,3 +13,21 @@
 
 
 <script src="js/proAlert.js"></script>
+
+<!-- Bootstrap Modal -->
+
+<div class="modal fade" id="testModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-light" style="padding:0.5rem 1rem;">
+                <h4 class="modal-title">User Details</h4>
+                <span class="close" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                </span>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+</div>

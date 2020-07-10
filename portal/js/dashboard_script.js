@@ -347,3 +347,38 @@ $('#userdata').on('click', '.active-switch', function () {
         }
     });
 });
+
+// View User Details
+$('#userdata').on('click', '.view-user', function () {
+    $this = $(this);
+    $user_id = $this.parent('td').parent('tr').attr('id');
+    $.ajax({
+        type : 'post',
+        url : './ajax/mng_users.php',
+        data: {action: 'get_a_user', user_id: $user_id},
+        dataType: 'html',
+        beforeSend: function () {
+            $('#testModal').on('show.bs.modal', function(){
+                $('#testModal .modal-body').html(`
+                    <i class="fa fa-circle-notch fa-spin fa-2x"></i> 
+                    <p>Loading...</p>
+                `);
+                $('#testModal .modal-body').css({
+                    'text-align':'center',
+                    'font-size' : '1.5rem'
+                })
+            });
+            // $('#testModal').modal('show');
+            $('#testModal').modal({
+                backdrop: 'static',
+                show: true
+            });
+        },
+        success: function (result){
+            $('#testModal .modal-body').html(result);
+        },
+        error: function (xhr, status, msg) {
+            console.error(msg);
+        }
+    });
+});
