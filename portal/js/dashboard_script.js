@@ -356,26 +356,36 @@ $('#userdata').on('click', '.view-user', function () {
         type : 'post',
         url : './ajax/mng_users.php',
         data: {action: 'get_a_user', user_id: $user_id},
-        dataType: 'html',
+        dataType: 'json',
         beforeSend: function () {
             $('#testModal').on('show.bs.modal', function(){
-                $('#testModal .modal-body').html(`
+                $('#testModal .modal-header').html(`
                     <i class="fa fa-circle-notch fa-spin fa-2x"></i> 
-                    <p>Loading...</p>
+                    <strong>Loading...</strong>
                 `);
-                $('#testModal .modal-body').css({
-                    'text-align':'center',
-                    'font-size' : '1.5rem'
-                })
             });
-            // $('#testModal').modal('show');
+            $('#testModal').modal('show');
             $('#testModal').modal({
                 backdrop: 'static',
                 show: true
             });
         },
         success: function (result){
-            $('#testModal .modal-body').html(result);
+            $('#testModal .modal-header').html(`
+                    <h4 class="modal-title">${ result.firstname }'s Details</h4>
+                    <span class="close" data-dismiss="modal">
+                        <i class="fa fa-times"></i>
+                    </span>
+                `);
+            
+            $('#testModal .modal-body #profile-img-container img').attr('src', 'imgs/profile/' + result.photo);
+            $('#fname').text(result.firstname);
+            $('#lname').text(result.lastname);
+            $('#email').text(result.email);
+            $('#phone').text(result.phone);
+
+            console.log(result);
+            
         },
         error: function (xhr, status, msg) {
             console.error(msg);

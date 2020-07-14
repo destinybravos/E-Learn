@@ -29,8 +29,10 @@
                 <div class="col-md-6">
                     <div class="card" style="margin-bottom: 30px;">
                         <div class="card-body">
-                        <div id="profile-img-container">
-                            <img src="imgs/profile/<?php echo $active_user_photo; ?>" alt="img">
+                        <div style="text-align:center;">
+                            <div id="profile-img-container">
+                                <img src="imgs/profile/<?php echo $active_user_photo; ?>" alt="img">
+                            </div>
                             <div>
                                 <button type="button" id="btn_upload_img" class="btn btn-primary">
                                     <i class="fa fa-camera"></i> Uplaod Image

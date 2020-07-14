@@ -68,17 +68,28 @@ if($action == 'fetch_users'){
     // Query User Details from Database
     $user_det = $conn->query("SELECT * FROM users WHERE id='$user_id'");
     $user_data = $user_det->fetch_array();
-    $html = '
-    <div class="card" style="margin-bottom: 30px;">
-        <div class="card-body">
-        <div id="profile-img-container">
-            <img src="imgs/profile/'. $user_data['photo'] .'" alt="img">
-        </div>
-        </div>
-    </div>
-    ';
+    $fname = $user_data['firstname'];
+    $lname = $user_data['lastname'];
+    $email = $user_data['email'];
+    $phone = $user_data['phone'];
+    $status = $user_data['status'];
+    $level = $user_data['user_level'];
+    $school_id = $user_data['school_id'];
+    $photo = $user_data['photo'];
 
-    echo $html;
+
+    $user_array = [
+        'firstname'=>$fname,
+        'lastname'=>$lname,
+        'email'=>$email,
+        'phone'=>$phone,
+        'status'=>$status,
+        'level'=>(int)$level,
+        'photo'=>$photo,
+        'school' => fetch_school_det($school_id, $conn)
+    ];
+
+    echo json_encode($user_array);
 }
 
 
@@ -90,5 +101,15 @@ function fetch_school($sch_id, $conn_obj){
         return $sch_name;
     }else{
         return 'Not Specified';
+    }
+}
+
+function fetch_school_det($sch_id, $conn_obj){
+    $school = $conn_obj->query("SELECT * FROM schools WHERE school_id='$sch_id'");
+    if($school->num_rows > 0){
+        $school_data = $school->fetch_array();
+        return $school_data;
+    }else{
+        return [];
     }
 }

@@ -151,3 +151,16 @@ li.sch_list span{
     cursor: pointer !important;
     display: inline-block;
 }
+
+#profile-img-container{
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+#profile-img-container img{
+    max-width: 100%;
+    min-height: 100%;
+}
