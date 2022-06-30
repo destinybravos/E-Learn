@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-md">
-                    <a href="index.php" class="navbar-brand">
+                    <a href="index.php" class="navbar-brand ">
                         <strong>E-Learn</strong>
                     </a>
                     <button type="button" class="navbar-toggler" data-target="#menu" data-toggle="collapse">
